@@ -50,7 +50,17 @@ table {
 html, body {
     margin : 0;
 }
+nav {
+    position: absolute;
+    width : 90vw;
+    height : 6vh;
+    left : 50%;
+    transform: translate(-50%, 0);
+    margin-top: 2vh;
+    background-color: beige;
+}
 #map {
-    width : 100%;
+    width : 100vw;
+    height : 100vh;
 }
 
