@@ -33,7 +33,7 @@ Sushi[0] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.6191576640629, 127.05622551187201), 
     image: markerImageSushi // 마커이미지 설정 
 });
-
+Sushi
 Sushi[1] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.62058260330177, 127.05862505541789), 
     image: markerImageSushi // 마커이미지 설정 
