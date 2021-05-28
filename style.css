@@ -54,21 +54,22 @@ html, body {
 nav {
     z-index: 2;
     position: absolute;
-    width : 90vw;
-    height : 45px;
-    left : 50%;
-    transform: translate(-50%, 0);
+    width : 50vw;
+    height : 50px;
+    left : 20px;
     margin-top: 12px;
     background-color: white;
     border-radius: 4px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 nav a {
+    font-family: 'Noto Sans KR', sans-serif;
     text-decoration: none;
     color: black;
     position: absolute;
-    top : 50%;
-    left : 60px;
+    top : 48%;
+    font-weight: bolder;
+    left : 114px;
     transform: translate(0, -50%);
 }
 
@@ -77,26 +78,8 @@ nav img {
     top : 50%;
     left : 15px;
     transform: translate(0, -50%);
-    height : 80%;
+    height : 95%;
     border-radius: 4px;
-}
-nav #plus {
-    position: absolute;
-    right : 102px;
-    top : 50%;
-    transform: translate(0, -50%);
-}
-nav #minus {
-    position: absolute;
-    right : 75px;
-    top : 50%;
-    transform: translate(0, -50%);
-}
-nav #myLocIcon {
-    position: absolute;
-    right : 45px;
-    top : 50%;
-    transform: translate(0, -50%);
 }
 
 nav #Menu-Bar {
@@ -120,17 +103,85 @@ nav #Menu-Bar {
     top : 50%;
     left : 50%;
     transform: translate(-50%, -50%);
-    background-color: blanchedalmond;
+    background-color: bisque;
+}
+.top-right {
+    z-index: 2;
+    font-size: 0.7rem;
+    position: absolute;
+    width : 122px;
+    height : 45px;
+    right : 28px;
+    margin-top : 15px;
+    border-radius: 4px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: white;
 }
 
-.bottom-left {
+#btnRoadmap {
+    color: white;
+    line-height: 36px;
+    text-align: center;
+    width : 45%;
+    height : 80%;
+    background-color: rgb(37, 143, 255);
+    border-radius: 4px;
+    position: relative;
+    top : 50%;
+    left : 3%;
+    transform: translate(0, -50%);
+}
+#btnSkyview {
+    color: black;
+    line-height: 36px;
+    text-align: center;
+    width : 45%;
+    height : 80%;
+    border-radius: 4px;
+    position: absolute;
+    top : 50%;
+    right : 3%;
+    transform: translate(0, -50%);
+}
+
+.middle-right {
+    z-index: 2;
+    position: absolute;
+    top : 65px;
+    right : 20px;
+}
+
+.middle-right .plus, .minus {
+    color :#920700;
+    margin : 10px;
+    width : 50px;
+    height : 50px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;    
+}
+.middle-right .plus i {
+    position : relative;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+}
+
+.middle-right .minus i {
+    position : relative;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-right {
     z-index: 2;
     position: absolute;
     bottom : 20px;
     right : 20px;
 }
 
-.bottom-left .price, .length, .taste {
+.bottom-right .price, .length, .taste {
     margin : 10px;
     width : 50px;
     height : 50px;
@@ -139,14 +190,14 @@ nav #Menu-Bar {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.bottom-left .price i {
+.bottom-right .price i {
     color: #e63636;
     position : relative;
     top : 32%;
     left : 50%;
     transform: translate(-50%, -35%);
 }
-.bottom-left .price div {
+.bottom-right .price div {
     color: #e63636;
     text-align: center;
     font-size: 0.7rem;
@@ -156,7 +207,7 @@ nav #Menu-Bar {
     transform: translate(-50%, -50%);
 }
 
-.bottom-left .length i {
+.bottom-right .length i {
     color: #258FFF;
     position : relative;
     top : 32%;
@@ -164,7 +215,7 @@ nav #Menu-Bar {
     transform: translate(-50%, -35%);
 }
 
-.bottom-left .length div {
+.bottom-right .length div {
     color: #258FFF;
     text-align: center;
     font-size: 0.7rem;
@@ -174,7 +225,7 @@ nav #Menu-Bar {
     transform: translate(-50%, -50%);
 }
 
-.bottom-left .taste i {
+.bottom-right .taste i {
     color: #31db4d;
     position : relative;
     top : 32%;
@@ -182,7 +233,7 @@ nav #Menu-Bar {
     transform: translate(-50%, -35%);
 }
 
-.bottom-left .taste div {
+.bottom-right .taste div {
     color: #31db4d;
     text-align: center;
     font-size: 0.7rem;

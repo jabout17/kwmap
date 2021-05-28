@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
     <title>광운대맵</title>
 </head>
 <body>
@@ -22,11 +24,8 @@
         }
     </script>
     <nav>
-        <img src="logo.png" alt="로고">
+        <img src="logo.jpg" alt="로고">
         <a href="#">광운대맵</a>
-        <i id="plus" class="far fa-plus-square fa-lg"></i>
-        <i id="minus" class="far fa-minus-square fa-lg"></i>
-        <i id="myLocIcon" class="fas fa-street-view fa-lg"></i>
         <i id="Menu-Bar"class="fas fa-bars fa-lg" onclick="myFunction()"></i>
     </nav>
     <div id="Menu" style="display: none;" class="animate__animated animate__fadeIn">
@@ -37,7 +36,19 @@
         <p>모바일에서는 조금 바꾸고</p>
     </div>
     
-    <div class="bottom-left">
+    <div class="top-right">
+        <div id="btnRoadmap" class="selected_btn" onclick="setMapType('roadmap')">지도</div>
+        <div id="btnSkyview" class="btn" onclick="setMapType('skyview')">스카이뷰</div>
+    </div>
+    <div class="middle-right">
+        <div class="plus" onclick="zoomIn()">
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="minus" onclick="zoomOut()">
+            <i class="fas fa-minus"></i>
+        </div>
+    </div>
+    <div class="bottom-right">
         <div class="price">
             <i class="far fa-money-bill-alt fa-lg"></i>
             <div class="">가격</div>
@@ -58,9 +69,42 @@
 		var container = document.getElementById('map');
 		var options = {
 			center: new kakao.maps.LatLng(37.61944467603689, 127.05979854008298),
-			level: 2
+			level: 1
 		};
 		var map = new kakao.maps.Map(container, options);
+
+        // 지도타입 컨트롤의 지도 또는 스카이뷰 버튼을 클릭하면 호출되어 지도타입을 바꾸는 함수입니다
+        function setMapType(maptype) { 
+            var roadmapControl = document.getElementById('btnRoadmap');
+            var skyviewControl = document.getElementById('btnSkyview'); 
+            if (maptype === 'roadmap') {
+                map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);    
+                roadmapControl.className = 'selected_btn';
+                skyviewControl.className = 'btn';
+                roadmapControl.style.color = 'white';
+                roadmapControl.style.backgroundColor = '#258FFF';
+                skyviewControl.style.color = 'black';
+                skyviewControl.style.backgroundColor = 'white';
+            } else {
+                map.setMapTypeId(kakao.maps.MapTypeId.HYBRID);    
+                skyviewControl.className = 'selected_btn';
+                roadmapControl.className = 'btn';
+                roadmapControl.style.color = 'black';
+                roadmapControl.style.backgroundColor = 'white';
+                skyviewControl.style.color = 'white';
+                skyviewControl.style.backgroundColor = '#258FFF';
+            }
+        }
+
+        // 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+        function zoomIn() {
+            map.setLevel(map.getLevel() - 1);
+        }
+
+        // 지도 확대, 축소 컨트롤에서 축소 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+        function zoomOut() {
+            map.setLevel(map.getLevel() + 1);
+        }
 	</script>
     <script src="mark.js"></script>
 </body>
