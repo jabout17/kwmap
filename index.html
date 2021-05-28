@@ -5,23 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="./style.css">
-    <title>광운대맵</title>
+    <title>광운대 신호등</title>
 </head>
 <body>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("Menu");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            }
+            else {
+                x.style.display = "block";
+            }
+        }
+    </script>
     <nav>
+        <img src="logo.png" alt="로고">
         <a href="#">광운대맵</a>
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars fa-lg" onclick="myFunction()"></i>
     </nav>
+    <div id="Menu" style="display: none;" class="animate__animated animate__fadeIn">
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <p>햄버거바 옆에 지도 사용자 컨트롤 두기</p>
+        <p>모바일에서는 조금 바꾸고</p>
+      </div>
     <div id="map"></div>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dd8745f24f53c2410beb5a33d2641d6e"></script>
     <script>
 		var container = document.getElementById('map');
 		var options = {
-			center: new kakao.maps.LatLng(33.450701, 126.570667),
-			level: 3
+			center: new kakao.maps.LatLng(37.61944467603689, 127.05979854008298),
+			level: 2
 		};
 		var map = new kakao.maps.Map(container, options);
 	</script>
+    <script src="mark.js"></script>
 </body>
 </html
