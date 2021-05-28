@@ -24,7 +24,10 @@
     <nav>
         <img src="logo.png" alt="로고">
         <a href="#">광운대맵</a>
-        <i class="fas fa-bars fa-lg" onclick="myFunction()"></i>
+        <i id="plus" class="far fa-plus-square fa-lg"></i>
+        <i id="minus" class="far fa-minus-square fa-lg"></i>
+        <i id="myLocIcon" class="fas fa-street-view fa-lg"></i>
+        <i id="Menu-Bar"class="fas fa-bars fa-lg" onclick="myFunction()"></i>
     </nav>
     <div id="Menu" style="display: none;" class="animate__animated animate__fadeIn">
         <a href="#news">News</a>
@@ -32,7 +35,23 @@
         <a href="#about">About</a>
         <p>햄버거바 옆에 지도 사용자 컨트롤 두기</p>
         <p>모바일에서는 조금 바꾸고</p>
-      </div>
+    </div>
+    
+    <div class="bottom-left">
+        <div class="price">
+            <i class="far fa-money-bill-alt fa-lg"></i>
+            <div class="">가격</div>
+        </div>
+        <div class="length">
+            <i class="fas fa-ruler fa-lg"></i>
+            <div class="">거리</div>
+        </div>
+        <div class="taste">
+            <i class="far fa-smile fa-lg"></i>
+            <div class="">맛</div>
+        </div>
+    </div>
+    
     <div id="map"></div>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dd8745f24f53c2410beb5a33d2641d6e"></script>
     <script>

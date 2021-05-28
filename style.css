@@ -80,8 +80,26 @@ nav img {
     height : 80%;
     border-radius: 4px;
 }
+nav #plus {
+    position: absolute;
+    right : 102px;
+    top : 50%;
+    transform: translate(0, -50%);
+}
+nav #minus {
+    position: absolute;
+    right : 75px;
+    top : 50%;
+    transform: translate(0, -50%);
+}
+nav #myLocIcon {
+    position: absolute;
+    right : 45px;
+    top : 50%;
+    transform: translate(0, -50%);
+}
 
-nav i {
+nav #Menu-Bar {
     position: absolute;
     right : 15px;
     top : 50%;
@@ -103,4 +121,73 @@ nav i {
     left : 50%;
     transform: translate(-50%, -50%);
     background-color: blanchedalmond;
+}
+
+.bottom-left {
+    z-index: 2;
+    position: absolute;
+    bottom : 20px;
+    right : 20px;
+}
+
+.bottom-left .price, .length, .taste {
+    margin : 10px;
+    width : 50px;
+    height : 50px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.bottom-left .price i {
+    color: #e63636;
+    position : relative;
+    top : 32%;
+    left : 50%;
+    transform: translate(-50%, -35%);
+}
+.bottom-left .price div {
+    color: #e63636;
+    text-align: center;
+    font-size: 0.7rem;
+    position : relative;
+    top : 42%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-left .length i {
+    color: #258FFF;
+    position : relative;
+    top : 32%;
+    left : 50%;
+    transform: translate(-50%, -35%);
+}
+
+.bottom-left .length div {
+    color: #258FFF;
+    text-align: center;
+    font-size: 0.7rem;
+    position : relative;
+    top : 42%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-left .taste i {
+    color: #31db4d;
+    position : relative;
+    top : 32%;
+    left : 50%;
+    transform: translate(-50%, -35%);
+}
+
+.bottom-left .taste div {
+    color: #31db4d;
+    text-align: center;
+    font-size: 0.7rem;
+    position : relative;
+    top : 42%;
+    left : 50%;
+    transform: translate(-50%, -50%);
 }
