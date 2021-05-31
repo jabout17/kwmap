@@ -1,111 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
-    <title>광운대맵</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>광운인</title>
 </head>
 <body>
-    <script>
-        function myFunction() {
-            var x = document.getElementById("Menu");
-            if (x.style.display === "block") {
-                x.style.display = "none";
-            }
-            else {
-                x.style.display = "block";
-            }
-        }
-    </script>
-    <nav>
-        <img src="logo.jpg" alt="로고">
-        <a href="#">광운대맵</a>
-        <i id="Menu-Bar"class="fas fa-bars fa-lg" onclick="myFunction()"></i>
-    </nav>
-    <div id="Menu" style="display: none;" class="animate__animated animate__fadeIn">
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <p>햄버거바 옆에 지도 사용자 컨트롤 두기</p>
-        <p>모바일에서는 조금 바꾸고</p>
-    </div>
-    
-    <div class="top-right">
-        <div id="btnRoadmap" class="selected_btn" onclick="setMapType('roadmap')">지도</div>
-        <div id="btnSkyview" class="btn" onclick="setMapType('skyview')">스카이뷰</div>
-    </div>
-    <div class="middle-right">
-        <div class="plus" onclick="zoomIn()">
-            <i class="fas fa-plus"></i>
-        </div>
-        <div class="minus" onclick="zoomOut()">
-            <i class="fas fa-minus"></i>
-        </div>
-    </div>
-    <div class="bottom-right">
-        <div class="price">
-            <i class="far fa-money-bill-alt fa-lg"></i>
-            <div class="">가격</div>
-        </div>
-        <div class="length">
-            <i class="fas fa-ruler fa-lg"></i>
-            <div class="">거리</div>
-        </div>
-        <div class="taste">
-            <i class="far fa-smile fa-lg"></i>
-            <div class="">맛</div>
-        </div>
-    </div>
-    
-    <div id="map"></div>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dd8745f24f53c2410beb5a33d2641d6e"></script>
-    <script>
-		var container = document.getElementById('map');
-		var options = {
-			center: new kakao.maps.LatLng(37.61944467603689, 127.05979854008298),
-			level: 1
-		};
-		var map = new kakao.maps.Map(container, options);
-
-        // 지도타입 컨트롤의 지도 또는 스카이뷰 버튼을 클릭하면 호출되어 지도타입을 바꾸는 함수입니다
-        function setMapType(maptype) { 
-            var roadmapControl = document.getElementById('btnRoadmap');
-            var skyviewControl = document.getElementById('btnSkyview'); 
-            if (maptype === 'roadmap') {
-                map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);    
-                roadmapControl.className = 'selected_btn';
-                skyviewControl.className = 'btn';
-                roadmapControl.style.color = 'white';
-                roadmapControl.style.backgroundColor = '#258FFF';
-                skyviewControl.style.color = 'black';
-                skyviewControl.style.backgroundColor = 'white';
-            } else {
-                map.setMapTypeId(kakao.maps.MapTypeId.HYBRID);    
-                skyviewControl.className = 'selected_btn';
-                roadmapControl.className = 'btn';
-                roadmapControl.style.color = 'black';
-                roadmapControl.style.backgroundColor = 'white';
-                skyviewControl.style.color = 'white';
-                skyviewControl.style.backgroundColor = '#258FFF';
-            }
-        }
-
-        // 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
-        function zoomIn() {
-            map.setLevel(map.getLevel() - 1);
-        }
-
-        // 지도 확대, 축소 컨트롤에서 축소 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
-        function zoomOut() {
-            map.setLevel(map.getLevel() + 1);
-        }
-	</script>
-    <script src="mark.js"></script>
+    <h1>광운대학교 - 광운인</h1>
+    <a href="./map.html" class="btn btn-primary btn-lg">지금 접속하기</a>
 </body>
-</html
+</html>

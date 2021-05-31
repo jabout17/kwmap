@@ -121,6 +121,7 @@ nav #Menu-Bar {
 #btnRoadmap {
     color: white;
     line-height: 36px;
+    font-size: 0.7rem;
     text-align: center;
     width : 45%;
     height : 80%;
@@ -135,6 +136,7 @@ nav #Menu-Bar {
     color: black;
     line-height: 36px;
     text-align: center;
+    font-size: 0.7rem;
     width : 45%;
     height : 80%;
     border-radius: 4px;
@@ -143,22 +145,27 @@ nav #Menu-Bar {
     right : 3%;
     transform: translate(0, -50%);
 }
-
-.middle-right {
-    z-index: 2;
-    position: absolute;
-    top : 65px;
-    right : 20px;
-}
-
 .middle-right .plus, .minus {
     color :#920700;
     margin : 10px;
-    width : 50px;
-    height : 50px;
+    width : 45px;
+    height : 45px;
     border-radius: 4px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;    
+}
+.middle-right .minus {
+    z-index: 2;
+    position: absolute;
+    top : 0;
+    margin-top: 15px;
+    right : 147px;
+}
+.middle-right .plus {
+    z-index: 2;
+    position: absolute;
+    margin-top: 15px;
+    right : 200px;
 }
 .middle-right .plus i {
     position : relative;
@@ -183,8 +190,8 @@ nav #Menu-Bar {
 
 .bottom-right .price, .length, .taste {
     margin : 10px;
-    width : 50px;
-    height : 50px;
+    width : 45px;
+    height : 45px;
     border-radius: 4px;
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -241,4 +248,209 @@ nav #Menu-Bar {
     top : 42%;
     left : 50%;
     transform: translate(-50%, -50%);
+}
+
+
+.middle-center {
+    margin-top: 6px;
+    z-index: 2;
+    position: absolute;
+    top : 60px;
+    right : 26px;
+}
+
+.middle-center .Sushi, .Meat, .Noodle, .Rice, .Bunsik, .Fastfood, .Caffee, .Beer {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px;
+    margin : 8px;
+    margin-right: 4px;
+    width : 42px;
+    height : 44px;
+    border-radius: 8px;
+    background-color: white;
+}
+.middle-center .Sushi {
+    height : 46px;
+}
+.middle-center .Sushi img {
+    height : 19px;
+    position : relative;
+    top : 24%;
+    left : 50%;
+    transform: translate(-50%, -24%);
+}
+.middle-center .Sushi div {
+    color: black;
+    text-align: center;
+    font-size: 0.7rem;
+    position : relative;
+    top : 25%;
+    left : 50%;
+    transform: translate(-50%, -25%);
+}
+
+.middle-center .Meat img {
+    height : 24px;
+    position : relative;
+    top : 24%;
+    left : 50%;
+    transform: translate(-50%, -24%);
+}
+.middle-center .Meat div {
+    color: black;
+    text-align: center;
+    font-size: 0.7rem;
+    position : relative;
+    top : 5%;
+    left : 50%;
+    transform: translate(-50%, -5%);
+}
+
+.middle-center .Noodle img {
+    height : 29px;
+    position : relative;
+    top : 17%;
+    left : 51%;
+    transform: translate(-50%, -24%);
+}
+.middle-center .Noodle div {
+    color: black;
+    text-align: center;
+    font-size: 0.7rem;
+    position : relative;
+    top : -1%;
+    left : 51%;
+    transform: translate(-50%, -10%);
+}
+.middle-center .Rice {
+    height: 46px;
+}
+.middle-center .Rice img {
+    height : 29px;
+    position : relative;
+    top : 21%;
+    left : 50%;
+    transform: translate(-50%, -24%);
+}
+.middle-center .Rice div {
+    color: black;
+    text-align: center;
+    font-size: 0.7rem;
+    position : relative;
+    top : 4%;
+    left : 50%;
+    transform: translate(-50%, -18%);
+}
+.middle-center .Bunsik {
+    margin-top: 19px;
+}
+.middle-center .Bunsik img {
+    height : 21px;
+    position : relative;
+    top : 24%;
+    left : 50%;
+    transform: translate(-50%, -24%);
+}
+.middle-center .Bunsik div {
+    color: black;
+    text-align: center;
+    font-size: 0.7rem;
+    position : relative;
+    top : 14%;
+    left : 50%;
+    transform: translate(-50%, -14%);
+}
+.middle-center .Fastfood {
+    height : 60px;
+}
+.middle-center .Fastfood img {
+    height : 30px;
+    position : relative;
+    top : 14%;
+    left : 50%;
+    transform: translate(-50%, -14%);
+}
+.middle-center .Fastfood div {
+    color: black;
+    text-align: center;
+    font-size: 0.7rem;
+    position : relative;
+    top : 6%;
+    left : 50%;
+    transform: translate(-50%, -6%);
+}
+.middle-center .Caffee {
+    margin-top: 19px;
+}
+.middle-center .Caffee img {
+    height : 33px;
+    position : relative;
+    top : -2%;
+    left : 53%;
+    transform: translate(-52%, 0%);
+}
+.middle-center .Caffee div {
+    color: black;
+    text-align: center;
+    font-size: 0.7rem;
+    position : relative;
+    top : -2%;
+    left : 50%;
+    transform: translate(-50%, -35%);
+}
+
+.middle-center .Beer img {
+    height : 21px;
+    position : relative;
+    top : 24%;
+    left : 50%;
+    transform: translate(-50%, -24%);
+}
+.middle-center .Beer div {
+    color: black;
+    text-align: center;
+    font-size: 0.7rem;
+    position : relative;
+    top : 21%;
+    left : 50%;
+    transform: translate(-50%, -21%);
+}
+
+.carousel {
+    z-index: 2;
+    height: 596px;
+    padding:20px;
+    width: 450px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border-radius: 4px;
+    position : absolute;
+    background-color: #F9F6F3;
+    top : 80px;
+    left : 20px;
+}
+
+#carouselExampleControls .btn-close {
+    position : absolute;
+    bottom : 8px;
+    right : 50%;
+}
+
+#showBtn {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    position: absolute;
+    z-index: 2;
+    width: 20px;
+    height: 90px;
+    top : 50%;
+    transform: translate(0%, -50%);
+    left : 0px;
+    line-height: 90px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+#showBtn i {
+    position: relative;
+    left : 50%;
+    transform: translate(-50%, 0%);
 }

@@ -14,11 +14,10 @@ if (navigator.geolocation) {
     alert("브라우저가 GeoLocation을 지원하지 않습니다.");
 }
 
-
 var imageSushi = './sushi.png', imageChina = './china.png'; // 마커이미지의 주소입니다 
 var imageCoffee = './coffee.png', imageMeat = './meat.png';
 var imageBeer = './beer.png' , imageRice = './rice.png';
-var imageBunsik = './bunsik.png';
+var imageBunsik = './bunsik.png', imageFastfood ='./fastfood.png'; 
 
 var imageSize = new kakao.maps.Size(44, 49), // 마커이미지의 크기입니다
 imageOption = {offset: new kakao.maps.Point(32, 34)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
@@ -31,6 +30,7 @@ var markerImageCoffee = new kakao.maps.MarkerImage(imageCoffee, imageSize, image
 var markerImageBeer = new kakao.maps.MarkerImage(imageBeer, imageSize, imageOption);
 var markerImageRice = new kakao.maps.MarkerImage(imageRice, imageSize, imageOption);
 var markerImageBunsik = new kakao.maps.MarkerImage(imageBunsik, imageSize, imageOption);
+var markerImageFastfood = new kakao.maps.MarkerImage(imageFastfood, imageSize, imageOption);
 
 // 마커를 생성합니다
 var Sushi = []
@@ -68,6 +68,11 @@ Rice[6] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.62027889552973, 127.05839898841195), //윤스쿡
     image: markerImageRice // 마커이미지 설정 
 });
+Rice[7] = new kakao.maps.Marker({
+    position: new kakao.maps.LatLng(37.620260571619454, 127.05879641851755), //한솥도시락 광운대정문
+    image: markerImageRice // 마커이미지 설정 
+});
+
 
 var Bunsik = []
 Bunsik[0] = new kakao.maps.Marker({
@@ -79,24 +84,24 @@ Bunsik[1] = new kakao.maps.Marker({
     image: markerImageBunsik // 마커이미지 설정 
 });
 
-var China = []
-China[0] = new kakao.maps.Marker({
-    position: new kakao.maps.LatLng(37.618643399289105, 127.05730049547331), 
+var Noodle = []
+Noodle[0] = new kakao.maps.Marker({
+    position: new kakao.maps.LatLng(37.618643399289105, 127.05730049547331), //미식성
     image: markerImageChina // 마커이미지 설정 
 });
-China[1] = new kakao.maps.Marker({
-    position: new kakao.maps.LatLng(37.620664309420754, 127.05862702302842), //신연 마라탕
+Noodle[1] = new kakao.maps.Marker({
+    position: new kakao.maps.LatLng(37.622946141914746, 127.05978827909387), //더원
+    image: markerImageChina // 마커이미지 설정 
+});
+Noodle[2] = new kakao.maps.Marker({
+    position: new kakao.maps.LatLng(37.62361454665871, 127.06091874856436), //친친
     image: markerImageChina // 마커이미지 설정 
 });
 
 
 var Meat = []
 Meat[0] = new kakao.maps.Marker({
-    position: new kakao.maps.LatLng(37.62074730506186, 127.05870499081668), 
-    image: markerImageMeat // 마커이미지 설정 
-});
-Meat[1] = new kakao.maps.Marker({
-    position: new kakao.maps.LatLng(37.620872446192394, 127.05853331628185), //화로상회
+    position: new kakao.maps.LatLng(37.62074730506186, 127.05870499081668), //화로상회
     image: markerImageMeat // 마커이미지 설정 
 });
 
@@ -144,25 +149,65 @@ Beer[4] = new kakao.maps.Marker({
     image: markerImageBeer // 마커이미지 설정 
 });
 
+var Fastfood =[] 
+Fastfood[0] = new kakao.maps.Marker({
+    position: new kakao.maps.LatLng(37.621454233909, 127.05908903740301), //진미통닭
+    image: markerImageFastfood // 마커이미지 설정 
+});
+Fastfood[1] = new kakao.maps.Marker({
+    position: new kakao.maps.LatLng(37.6209002697109, 127.05880258592641), //BBQ 월계광운대점
+    image: markerImageFastfood // 마커이미지 설정 
+});
+Fastfood[2] = new kakao.maps.Marker({
+    position: new kakao.maps.LatLng(37.62132680382325, 127.0594188445525), //썬더치킨 광운대점
+    image: markerImageFastfood // 마커이미지 설정 
+});
+Fastfood[3] = new kakao.maps.Marker({
+    position: new kakao.maps.LatLng(37.62193938789321, 127.05959207505809), //도미노피자 월계점
+    image: markerImageFastfood // 마커이미지 설정 
+});
+Fastfood[4] = new kakao.maps.Marker({
+    position: new kakao.maps.LatLng(37.62266691909971, 127.05962380647559), //서브웨이 광운대역점
+    image: markerImageFastfood // 마커이미지 설정 
+});
+
 // 마커가 지도 위에 표시되도록 설정합니다
 for(let i = 0; i < Sushi.length; i++) {
-    Sushi[i].setMap(map)
+    Sushi[i].setMap(map);
 }
+var isSushiShow = true;
+
 for(let i = 0; i < Rice.length; i++) {
-    Rice[i].setMap(map)
+    Rice[i].setMap(map);
 }
-for(let i = 0; i < China.length; i++) {
-    China[i].setMap(map)
+var isRiceShow = true;
+
+for(let i = 0; i < Noodle.length; i++) {
+    Noodle[i].setMap(map);
 }
+var isNoodleShow = true;
+
 for(let i = 0; i < Meat.length; i++) {
-    Meat[i].setMap(map)
+    Meat[i].setMap(map);
 }
+var isMeatShow = true;
+
 for(let i = 0; i < Coffee.length; i++) {
-    Coffee[i].setMap(map)
+    Coffee[i].setMap(map);
 }
+var isCoffeeShow = true;
+
 for(let i = 0; i < Beer.length; i++) {
-    Beer[i].setMap(map)
+    Beer[i].setMap(map);
 }
-for(let i = 0; i < Beer.length; i++) {
-    Bunsik[i].setMap(map)
+var isBeerShow = true;
+
+for(let i = 0; i < Bunsik.length; i++) {
+    Bunsik[i].setMap(map);
 }
+var isBunsikShow = true;
+
+for(let i = 0; i < Fastfood.length; i++) {
+    Fastfood[i].setMap(map);
+}
+var isFastfoodShow = true;
