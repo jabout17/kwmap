@@ -1,6 +1,9 @@
+var MyLoc = []
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((pos) => {
         var latitude = pos.coords.latitude;
+        MyLoc[0] = pos.coords.latitude;
+        MyLoc[1] = pos.coords.longitude;
         var longitude = pos.coords.longitude;
         var imageUser = './user.png';
         var  markerImageUser = new kakao.maps.MarkerImage(imageUser, new kakao.maps.Size(44, 49), {offset: new kakao.maps.Point(32, 34)});
@@ -13,24 +16,29 @@ if (navigator.geolocation) {
 } else {
     alert("브라우저가 GeoLocation을 지원하지 않습니다.");
 }
+alert(MyLoc);
+var MyLength = []
 
-var imageSushi = './markimg/sushi.png', imageChina = './markimg/china.png'; // 마커이미지의 주소입니다 
+var imageSushi = './markimg/sushi.png', imageChina = './markimg/china.png'; 
 var imageCoffee = './markimg/coffee.png', imageMeat = './markimg/meat.png';
 var imageBeer = './markimg/beer.png' , imageRice = './markimg/rice.png';
-var imageBunsik = './markimg/bunsik.png', imageFastfood ='./markimg/fastfood.png'; 
+var imageBunsik = './markimg/bunsik.png', imageHamburger ='./markimg/hamburger.png';
+var imageChicken = './markimg/chicken.png', imagePizza = './markimg/pizza.png';
 
 var imageSize = new kakao.maps.Size(44, 49), // 마커이미지의 크기입니다
 imageOption = {offset: new kakao.maps.Point(32, 34)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
 // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
-var markerImageSushi = new kakao.maps.MarkerImage(imageSushi, new kakao.maps.Size(100, 100), imageOption);
+var markerImageSushi = new kakao.maps.MarkerImage(imageSushi, new kakao.maps.Size(60, 50), imageOption);
 var markerImageChina = new kakao.maps.MarkerImage(imageChina, new kakao.maps.Size(80, 80), imageOption);
-var markerImageMeat = new kakao.maps.MarkerImage(imageMeat, new kakao.maps.Size(70, 70), imageOption);
+var markerImageMeat = new kakao.maps.MarkerImage(imageMeat, new kakao.maps.Size(50, 40), imageOption);
 var markerImageCoffee = new kakao.maps.MarkerImage(imageCoffee, new kakao.maps.Size(50, 50), imageOption);
 var markerImageBeer = new kakao.maps.MarkerImage(imageBeer, new kakao.maps.Size(70, 70), imageOption);
 var markerImageRice = new kakao.maps.MarkerImage(imageRice, new kakao.maps.Size(70, 70), imageOption);
 var markerImageBunsik = new kakao.maps.MarkerImage(imageBunsik, new kakao.maps.Size(70, 70), imageOption);
-var markerImageFastfood = new kakao.maps.MarkerImage(imageFastfood, new kakao.maps.Size(50, 50), imageOption);
+var markerImageHamburger = new kakao.maps.MarkerImage(imageHamburger, new kakao.maps.Size(60, 30), imageOption);
+var markerImageChicken = new kakao.maps.MarkerImage(imageChicken, new kakao.maps.Size(50, 70), imageOption);
+var markerImagePizza = new kakao.maps.MarkerImage(imagePizza, new kakao.maps.Size(50, 50), imageOption);
 
 // 마커를 생성합니다
 var Sushi = []
@@ -38,7 +46,8 @@ Sushi[0] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.6191576640629, 127.05622551187201), 
     image: markerImageSushi // 마커이미지 설정 
 });
-
+MyLength[0] = Math.pow((MyLoc[0] - 37.6191576640629)) + Math.pow((MyLoc[1] - 127.05622551187201));
+alert(MyLength[0]);
 var Rice = []
 Rice[0] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.62023304107087, 127.05829700071017), //지지고
@@ -61,24 +70,20 @@ Rice[4] = new kakao.maps.Marker({
     image: markerImageRice // 마커이미지 설정 
 });
 Rice[5] = new kakao.maps.Marker({
-    position: new kakao.maps.LatLng(37.620528670603726, 127.0585625616233), //김밥천국
-    image: markerImageRice // 마커이미지 설정 
-});
-Rice[6] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.62027889552973, 127.05839898841195), //윤스쿡
     image: markerImageRice // 마커이미지 설정 
 });
-Rice[7] = new kakao.maps.Marker({
+Rice[6] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.620260571619454, 127.05879641851755), //한솥도시락 광운대정문
     image: markerImageRice // 마커이미지 설정 
 });
-
 
 var Bunsik = []
 Bunsik[0] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.6208624027212, 127.05928583354357), //언니떡볶이 동생브리또
     image: markerImageBunsik // 마커이미지 설정 
 });
+
 Bunsik[1] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.62105519873698, 127.05895078207601), //동대문엽기떡볶이
     image: markerImageBunsik // 마커이미지 설정 
@@ -144,31 +149,27 @@ Beer[3] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.62342972308086, 127.06024472580165), //빈대떡신사
     image: markerImageBeer // 마커이미지 설정 
 });
-Beer[4] = new kakao.maps.Marker({
-    position: new kakao.maps.LatLng(37.622440519304256, 127.06078919750385), //공릉통골뱅이
-    image: markerImageBeer // 마커이미지 설정 
-});
 
 var Fastfood =[] 
 Fastfood[0] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.621454233909, 127.05908903740301), //진미통닭
-    image: markerImageFastfood // 마커이미지 설정 
+    image: markerImageChicken // 마커이미지 설정 
 });
 Fastfood[1] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.6209002697109, 127.05880258592641), //BBQ 월계광운대점
-    image: markerImageFastfood // 마커이미지 설정 
+    image: markerImageChicken // 마커이미지 설정 
 });
 Fastfood[2] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.62132680382325, 127.0594188445525), //썬더치킨 광운대점
-    image: markerImageFastfood // 마커이미지 설정 
+    image: markerImageChicken // 마커이미지 설정 
 });
 Fastfood[3] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.62193938789321, 127.05959207505809), //도미노피자 월계점
-    image: markerImageFastfood // 마커이미지 설정 
+    image: markerImagePizza // 마커이미지 설정 
 });
 Fastfood[4] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.62266691909971, 127.05962380647559), //서브웨이 광운대역점
-    image: markerImageFastfood // 마커이미지 설정 
+    image: markerImageHamburger // 마커이미지 설정 
 });
 
 // 마커가 지도 위에 표시되도록 설정합니다
