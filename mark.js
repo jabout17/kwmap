@@ -16,8 +16,6 @@ if (navigator.geolocation) {
 } else {
     alert("브라우저가 GeoLocation을 지원하지 않습니다.");
 }
-alert(MyLoc);
-var MyLength = []
 
 var imageSushi = './markimg/sushi.png', imageChina = './markimg/china.png'; 
 var imageCoffee = './markimg/coffee.png', imageMeat = './markimg/meat.png';
@@ -46,8 +44,7 @@ Sushi[0] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.6191576640629, 127.05622551187201), 
     image: markerImageSushi // 마커이미지 설정 
 });
-MyLength[0] = Math.pow((MyLoc[0] - 37.6191576640629)) + Math.pow((MyLoc[1] - 127.05622551187201));
-alert(MyLength[0]);
+
 var Rice = []
 Rice[0] = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.62023304107087, 127.05829700071017), //지지고
