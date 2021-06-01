@@ -47,6 +47,48 @@ table {
 	border-spacing: 0;
 }
 
+
+
+
+
+
+
+@font-face {
+    font-family: 'Binggrae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'SLEIGothicTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Cafe24SsurroundAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 html, body {
     margin : 0;
     font-size: 16px;
@@ -54,7 +96,7 @@ html, body {
 nav {
     z-index: 2;
     position: absolute;
-    width : 50vw;
+    width : 65vw;
     height : 50px;
     left : 20px;
     margin-top: 12px;
@@ -62,12 +104,13 @@ nav {
     border-radius: 4px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-nav a {
-    font-family: 'Noto Sans KR', sans-serif;
+nav #Title {
+    font-family: 'Binggrae';
     text-decoration: none;
+    font-size: 1.05em;
     color: black;
     position: absolute;
-    top : 48%;
+    top : 50%;
     font-weight: bolder;
     left : 114px;
     transform: translate(0, -50%);
@@ -81,8 +124,42 @@ nav img {
     height : 95%;
     border-radius: 4px;
 }
-
+#en {
+    margin-left: 0.1rem;
+    font-family: 'SLEIGothicTTF';
+}
+nav .nav-content {
+    font-family: 'Cafe24SsurroundAir';
+    font-weight: 600;
+    position: absolute;
+    right : 14px;
+    top : 50%;
+    transform: translate(0, -50%);
+}
+nav .nav-content a {
+    text-decoration: none;
+    color : black;
+}
+nav .nav-content .c1, nav .nav-content .c2, nav .nav-content .c3, nav .nav-content .c4 {
+    margin-right: 10px;
+    padding-right : 10px;
+    border-right : 1px solid rgb(141, 141, 141);
+    color: #920700;
+}
+nav .nav-content .c1 {
+    color : #F49902;
+}
+nav .nav-content .c2 {
+    color : green;
+}
+nav .nav-content .c3 {
+    color : rgb(4, 4, 161);
+}
+nav .nav-content a:last-child {
+    color : #e9dd02;
+}
 nav #Menu-Bar {
+    display: none;
     position: absolute;
     right : 15px;
     top : 50%;
@@ -318,7 +395,7 @@ nav #Menu-Bar {
     font-size: 0.7rem;
     position : relative;
     top : -1%;
-    left : 51%;
+    left : 50%;
     transform: translate(-50%, -10%);
 }
 .middle-center .Rice {
@@ -453,4 +530,32 @@ nav #Menu-Bar {
     position: relative;
     left : 50%;
     transform: translate(-50%, 0%);
+}
+
+@media screen and (max-width : 1200px) {
+    nav {
+        width : 95vw;
+    }
+
+    .top-right {
+        display: none;
+    }
+    .middle-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width : 900px) {
+    .nav-content {
+        display: none;
+    }
+    nav #Menu-Bar {
+        display: block;
+    }
+    nav {
+        width : 90vw;
+    }
+    .middle-center {
+        right : 3vw;
+    }
 }

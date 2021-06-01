@@ -10,11 +10,11 @@
 }
 h1 {
     position: absolute;
-    top : 40%;
+    top : 30%;
     left : 50%;
     transform: translate(-50%, -40%);
     font-size: 5rem;
-    color : #5D232F;
+    color : white;
     text-shadow: 0 1px 0 #ccc, 
                    0 2px 0 #c9c9c9,
                    0 3px 0 #bbb,
@@ -29,7 +29,7 @@ h1 {
                    0 20px 20px rgba(0,0,0,.15);
 }
 body {
-    background: url(./background.png) no-repeat;
+    background: url(./background.jpg) no-repeat;
     background-size : cover;
     height: 100vh;
     width : 100vw;
@@ -37,12 +37,38 @@ body {
 
 a {
     position: absolute;
-    top : 60%;
+    top : 68%;
     left : 50%;
+    width : 20%;
     transform: translate(-50%, -60%);
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 .btn-primary { 
-    border : #00F0BD;
-    background-color: #00F0BD;
+    border : #083c8b;
+    background-color: #083c8b;
+}
+
+#logo {
+    color : brown;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -55%);
+}
+
+@media screen and (max-width : 985px) {
+    h1 {
+        font-size : 3rem;
+    }
+}
+
+@media screen and (max-width : 360px) {
+    h1 {
+        top : 43%;
+        font-size : 1.8rem;
+    }
+    a {
+        top : 60%;
+        width : 40%;
+        font-size: 0.8rem;
+    }
 }
